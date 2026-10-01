@@ -4,8 +4,8 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin ACCOUNT_ID.dkr.ecr.us-east-2.amazonaws.com
-      - REPOSITORY_URI=ACCOUNT_ID.dkr.ecr.us-east-2.amazonaws.com/docker_mastery
+      - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 199865934124.dkr.ecr.us-east-2.amazonaws.com
+      - REPOSITORY_URI=199865934124.dkr.ecr.us-east-2.amazonaws.com/sending
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
